@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeting</title>
+  <script>
+    function updateTime() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+
+      // Display the hour
+      document.getElementById("time").innerHTML = hours;
+
+      // Store the hour as a number
+      var hourAsNumber = parseInt(hours, 10);
+
+      // Check the condition and update the message
+      var greetingMessage = (hourAsNumber > 21) ? "Hello" : "Goodbye";
+      document.getElementById("greeting").innerHTML = greetingMessage;
+    }
+
+    setInterval(updateTime, 1000); // Update every second
+  </script>
+</head>
+<body>
+  <h1 id="greeting"></h1>
+  <p>Current Hour: <span id="time"></span></p>
+</body>
+</html>
